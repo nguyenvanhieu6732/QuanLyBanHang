@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBanHang
 {
-    partial class frmDMNhanVien
+    partial class frmDMHangHoa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
             panel3 = new Panel();
             btnDong = new Button();
             btnBoqua = new Button();
@@ -36,38 +35,24 @@
             btnSua = new Button();
             btnXoa = new Button();
             btnThem = new Button();
+            button1 = new Button();
             panel2 = new Panel();
-            dtpNgaySinh = new DateTimePicker();
+            mtbDienThoai = new MaskedTextBox();
             txtDiaChi = new TextBox();
-            chkGioiTinh = new CheckBox();
-            txtTenNhanVien = new TextBox();
-            txtMaNhanVien = new TextBox();
-            label5 = new Label();
+            txtTenKhach = new TextBox();
+            txtMaKhach = new TextBox();
             label6 = new Label();
             label7 = new Label();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            dgvNhanVien = new DataGridView();
-            mtbDienThoai = new MaskedTextBox();
-            panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvNhanVien).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(panel3);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 350);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 100);
-            panel1.TabIndex = 0;
             // 
             // panel3
             // 
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(btnDong);
             panel3.Controls.Add(btnBoqua);
             panel3.Controls.Add(btnLuu);
@@ -75,55 +60,60 @@
             panel3.Controls.Add(btnXoa);
             panel3.Controls.Add(btnThem);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 0);
+            panel3.Location = new Point(0, 350);
             panel3.Name = "panel3";
             panel3.Size = new Size(800, 100);
-            panel3.TabIndex = 0;
+            panel3.TabIndex = 2;
             // 
             // btnDong
             // 
-            btnDong.Location = new Point(683, 35);
+            btnDong.Location = new Point(659, 35);
             btnDong.Name = "btnDong";
             btnDong.Size = new Size(75, 23);
             btnDong.TabIndex = 5;
             btnDong.Text = "&Đóng";
             btnDong.UseVisualStyleBackColor = true;
+            btnDong.Click += btnDong_Click;
             // 
             // btnBoqua
             // 
-            btnBoqua.Location = new Point(558, 35);
+            btnBoqua.Location = new Point(456, 35);
             btnBoqua.Name = "btnBoqua";
             btnBoqua.Size = new Size(75, 23);
             btnBoqua.TabIndex = 4;
             btnBoqua.Text = "&Bỏ qua";
             btnBoqua.UseVisualStyleBackColor = true;
+            btnBoqua.Click += this.btnBoqua_Click;
             // 
             // btnLuu
             // 
-            btnLuu.Location = new Point(433, 35);
+            btnLuu.Location = new Point(354, 35);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(75, 23);
             btnLuu.TabIndex = 3;
             btnLuu.Text = "&Lưu";
             btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.Click += this.btnLuu_Click;
             // 
             // btnSua
             // 
-            btnSua.Location = new Point(308, 35);
+            btnSua.Location = new Point(254, 35);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(75, 23);
             btnSua.TabIndex = 2;
             btnSua.Text = "&Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += this.btnSua_Click;
             // 
             // btnXoa
             // 
-            btnXoa.Location = new Point(183, 35);
+            btnXoa.Location = new Point(157, 35);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(75, 23);
             btnXoa.TabIndex = 1;
             btnXoa.Text = "&Xóa";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += this.btnXoa_Click;
             // 
             // btnThem
             // 
@@ -133,186 +123,127 @@
             btnThem.TabIndex = 0;
             btnThem.Text = "&Thêm";
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += this.btnThem_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(552, 35);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 6;
+            button1.Text = "&Hiển thị";
+            button1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             panel2.Controls.Add(mtbDienThoai);
-            panel2.Controls.Add(dtpNgaySinh);
             panel2.Controls.Add(txtDiaChi);
-            panel2.Controls.Add(chkGioiTinh);
-            panel2.Controls.Add(txtTenNhanVien);
-            panel2.Controls.Add(txtMaNhanVien);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(txtTenKhach);
+            panel2.Controls.Add(txtMaKhach);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(800, 143);
-            panel2.TabIndex = 0;
+            panel2.Size = new Size(800, 118);
+            panel2.TabIndex = 3;
             // 
-            // dtpNgaySinh
+            // mtbDienThoai
             // 
-            dtpNgaySinh.Format = DateTimePickerFormat.Short;
-            dtpNgaySinh.Location = new Point(549, 98);
-            dtpNgaySinh.Name = "dtpNgaySinh";
-            dtpNgaySinh.Size = new Size(168, 23);
-            dtpNgaySinh.TabIndex = 5;
+            mtbDienThoai.Location = new Point(565, 71);
+            mtbDienThoai.Mask = "(999) 000-0000";
+            mtbDienThoai.Name = "mtbDienThoai";
+            mtbDienThoai.Size = new Size(168, 23);
+            mtbDienThoai.TabIndex = 12;
             // 
             // txtDiaChi
             // 
-            txtDiaChi.Location = new Point(549, 36);
+            txtDiaChi.Location = new Point(565, 43);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(168, 23);
-            txtDiaChi.TabIndex = 3;
+            txtDiaChi.TabIndex = 11;
             // 
-            // chkGioiTinh
+            // txtTenKhach
             // 
-            chkGioiTinh.AutoSize = true;
-            chkGioiTinh.Checked = true;
-            chkGioiTinh.CheckState = CheckState.Checked;
-            chkGioiTinh.Location = new Point(156, 103);
-            chkGioiTinh.Name = "chkGioiTinh";
-            chkGioiTinh.Size = new Size(52, 19);
-            chkGioiTinh.TabIndex = 2;
-            chkGioiTinh.Text = "Nam";
-            chkGioiTinh.UseVisualStyleBackColor = true;
+            txtTenKhach.Location = new Point(172, 71);
+            txtTenKhach.Name = "txtTenKhach";
+            txtTenKhach.Size = new Size(168, 23);
+            txtTenKhach.TabIndex = 8;
             // 
-            // txtTenNhanVien
+            // txtMaKhach
             // 
-            txtTenNhanVien.Location = new Point(156, 64);
-            txtTenNhanVien.Name = "txtTenNhanVien";
-            txtTenNhanVien.Size = new Size(168, 23);
-            txtTenNhanVien.TabIndex = 1;
-            // 
-            // txtMaNhanVien
-            // 
-            txtMaNhanVien.Location = new Point(156, 35);
-            txtMaNhanVien.Name = "txtMaNhanVien";
-            txtMaNhanVien.Size = new Size(168, 23);
-            txtMaNhanVien.TabIndex = 0;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(469, 107);
-            label5.Name = "label5";
-            label5.Size = new Size(63, 15);
-            label5.TabIndex = 6;
-            label5.Text = "Ngày sinh:";
+            txtMaKhach.Location = new Point(172, 42);
+            txtMaKhach.Name = "txtMaKhach";
+            txtMaKhach.Size = new Size(168, 23);
+            txtMaKhach.TabIndex = 6;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(469, 72);
+            label6.Location = new Point(485, 79);
             label6.Name = "label6";
             label6.Size = new Size(64, 15);
-            label6.TabIndex = 5;
+            label6.TabIndex = 14;
             label6.Text = "Điện thoại:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(469, 39);
+            label7.Location = new Point(485, 46);
             label7.Name = "label7";
             label7.Size = new Size(46, 15);
-            label7.TabIndex = 4;
+            label7.TabIndex = 13;
             label7.Text = "Địa chỉ:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(51, 107);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Giới tính:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(51, 72);
+            label3.Location = new Point(67, 79);
             label3.Name = "label3";
-            label3.Size = new Size(83, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Tên nhân viên:";
+            label3.Size = new Size(63, 15);
+            label3.TabIndex = 10;
+            label3.Text = "Tên khách:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(51, 39);
+            label2.Location = new Point(67, 46);
             label2.Name = "label2";
-            label2.Size = new Size(82, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Mã nhân viên:";
+            label2.Size = new Size(62, 15);
+            label2.TabIndex = 9;
+            label2.Text = "Mã khách:";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(320, 0);
+            label1.Location = new Point(336, 7);
             label1.Name = "label1";
-            label1.Size = new Size(201, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Danh Mục Nhân Viên";
+            label1.Size = new Size(215, 25);
+            label1.TabIndex = 7;
+            label1.Text = "Danh Mục Khách Hàng";
             // 
-            // dgvNhanVien
-            // 
-            dgvNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvNhanVien.Dock = DockStyle.Fill;
-            dgvNhanVien.Location = new Point(0, 143);
-            dgvNhanVien.Name = "dgvNhanVien";
-            dgvNhanVien.Size = new Size(800, 207);
-            dgvNhanVien.TabIndex = 1;
-            // 
-            // mtbDienThoai
-            // 
-            mtbDienThoai.Location = new Point(549, 64);
-            mtbDienThoai.Mask = "(999) 000-0000";
-            mtbDienThoai.Name = "mtbDienThoai";
-            mtbDienThoai.Size = new Size(168, 23);
-            mtbDienThoai.TabIndex = 4;
-            // 
-            // frmDMNhanVien
+            // frmDMHangHoa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dgvNhanVien);
             Controls.Add(panel2);
-            Controls.Add(panel1);
-            Name = "frmDMNhanVien";
-            Text = "Danh Mục Nhân Viên";
-            panel1.ResumeLayout(false);
+            Controls.Add(panel3);
+            Name = "frmDMHangHoa";
+            Text = "Danh mục hàng hóa";
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvNhanVien).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
-        private DataGridView dgvNhanVien;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private TextBox txtDiaChi;
-        private CheckBox chkGioiTinh;
-        private TextBox txtTenNhanVien;
-        private TextBox txtMaNhanVien;
-        private DateTimePicker dtpNgaySinh;
         private Panel panel3;
         private Button btnDong;
         private Button btnBoqua;
@@ -320,6 +251,16 @@
         private Button btnSua;
         private Button btnXoa;
         private Button btnThem;
+        private Button button1;
+        private Panel panel2;
         private MaskedTextBox mtbDienThoai;
+        private TextBox txtDiaChi;
+        private TextBox txtTenKhach;
+        private TextBox txtMaKhach;
+        private Label label6;
+        private Label label7;
+        private Label label3;
+        private Label label2;
+        private Label label1;
     }
 }
